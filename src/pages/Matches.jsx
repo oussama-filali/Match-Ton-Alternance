@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { getOffers } from "../services/api";
 import { matchOfferWithProfile } from "../utils/matcher";
 import Card from "../components/card";
+import Loader from "../components/Loader"; // Assurez-vous que ce composant existe
 
 export default function Matches() {
   const [offers, setOffers] = useState([]);
   const [profile, setProfile] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const saved = localStorage.getItem("userProfile");
@@ -15,10 +17,13 @@ export default function Matches() {
 
     getOffers().then((data) => {
       setOffers(data);
+      setIsLoading(false);
     });
   }, []);
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className="p-4 bg-gray-50 min-h-screen">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
         Résultats de Matching

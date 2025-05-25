@@ -1,37 +1,44 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { supabase } from "../supabaseClient";
 
 export default function ProfileForm() {
   const [name, setName] = useState("");
   const [technos, setTechnos] = useState("");
   const [keywords, setKeywords] = useState("");
 
-  // Charger les données depuis localStorage
-  useEffect(() => {
-    const storedProfile = JSON.parse(localStorage.getItem("userProfile"));
-    if (storedProfile) {
-      setName(storedProfile.name || "");
-      setTechnos(storedProfile.technos || "");
-      setKeywords(storedProfile.keywords || "");
-    }
-  }, []);
-
-  // Enregistrer dans localStorage
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const profile = {
-      name,
-      technos: technos.split(",").map((t) => t.trim()),
-      keywords: keywords.split(",").map((k) => k.trim()),
-    };
+    const {
+      data: { user },
+      error: userError,
+    } = await supabase.auth.getUser();
 
-    localStorage.setItem("userProfile", JSON.stringify(profile));
-    alert("Profil sauvegardé ! 🚀");
+    if (userError || !user) {
+      alert("Utilisateur non connecté !");
+      return;
+    }
+
+    const { error } = await supabase.from("profiles").upsert(
+      {
+        user_id: user.id,
+        display_name: name,
+        technos: technos.split(",").map((t) => t.trim()),
+        keywords: keywords.split(",").map((k) => k.trim()),
+      },
+      { onConflict: "user_id" } // très important !!
+    );
+
+    if (error) {
+      alert("Erreur lors de la sauvegarde : " + error.message);
+    } else {
+      alert("Profil sauvegardé avec succès !");
+    }
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
+    <div className="max-w-2xl p-6 mx-auto mt-10 bg-white shadow-md rounded-xl">
+      <h2 className="mb-6 text-2xl font-bold text-center text-gray-800">
         Complète ton profil
       </h2>
 
@@ -76,7 +83,7 @@ export default function ProfileForm() {
 
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 transition"
+          className="w-full px-4 py-2 font-semibold text-white transition bg-blue-600 rounded-md hover:bg-blue-700"
         >
           Enregistrer le profil
         </button>
