@@ -1,0 +1,25 @@
+node_modules
+dist
+dist-ssr
+*.local
+# Fichiers sensibles et config locale
+backend/.env
+frontend/.env
+*.env.local
+*.env.*
+# Clés et secrets
+**/supabase.key
+**/serviceAccountKey.json
+# Dépendances
+backend/vendor/
+frontend/node_modules/
+# Logs et caches
+*.log
+*.cache
+*.sqlite
+*.db
+# Fichiers temporaires
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db

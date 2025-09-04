@@ -1,0 +1,24 @@
+# Match Ton Alternance - AI Engine Dependencies
+
+# Framework web
+Flask==2.3.3
+Flask-CORS==4.0.0
+
+# Machine Learning et Data Science
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
+
+# Natural Language Processing
+nltk==3.8.1
+
+# Utilitaires
+python-dotenv==1.0.0
+requests==2.31.0
+
+# Logging et monitoring
+gunicorn==21.2.0
+
+# Développement
+pytest==7.4.0
+pytest-cov==4.1.0

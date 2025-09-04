@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Match Ton Alternance - Plateforme IA de Matching Professionnel</title>
+    <meta name="description" content="Trouvez votre alternance parfaite grâce à notre IA avancée. Matching intelligent entre candidats et entreprises pour des opportunités d'alternance, stage et emploi." />
+    <meta name="keywords" content="alternance, stage, emploi, matching, IA, intelligence artificielle, candidat, entreprise, formation" />
+    <meta name="author" content="Match Ton Alternance" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://matchtonalternance.com/" />
+    <meta property="og:title" content="Match Ton Alternance - Plateforme IA de Matching Professionnel" />
+    <meta property="og:description" content="Trouvez votre alternance parfaite grâce à notre IA avancée." />
+    <meta property="og:image" content="/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://matchtonalternance.com/" />
+    <meta property="twitter:title" content="Match Ton Alternance - Plateforme IA de Matching Professionnel" />
+    <meta property="twitter:description" content="Trouvez votre alternance parfaite grâce à notre IA avancée." />
+    <meta property="twitter:image" content="/twitter-image.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#3b82f6" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Prevent FOUC (Flash of Unstyled Content) -->
+    <style>
+      #root {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #eff6ff 100%);
+      }
+      
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #e5e7eb;
+        border-top: 4px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      .loading-text {
+        margin-top: 16px;
+        color: #6b7280;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 14px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading fallback -->
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Chargement de Match Ton Alternance...</div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
