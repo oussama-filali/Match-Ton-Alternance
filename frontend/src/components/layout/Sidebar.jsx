@@ -106,7 +106,7 @@ const Sidebar = () => {
   };
 
   return (
-    <motion.aside
+    <aside
       
       
       
@@ -248,7 +248,7 @@ const Sidebar = () => {
           </Link>
         </div>
       </div>
-    </motion.aside>
+    </aside>
   );
 };
 
