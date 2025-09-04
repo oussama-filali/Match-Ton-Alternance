@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import { motion, AnimatePresence } from 'framer-motion';
 
 // Contexts
 import { AppProvider, useApp } from './contexts/AppContext';
@@ -57,30 +56,18 @@ const AppLayout = ({ children }) => {
       {isAuthenticated && <Navbar />}
       
       <div className="flex">
-        <AnimatePresence>
-          {isAuthenticated && sidebarOpen && (
-            <motion.div
-              initial={{ x: -300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: -300, opacity: 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
+        {isAuthenticated && sidebarOpen && (
+            <div>
               <Sidebar />
-            </motion.div>
+            </div>
           )}
-        </AnimatePresence>
         
         <main className={`flex-1 transition-all duration-300 ${
           isAuthenticated && sidebarOpen ? 'ml-64' : ''
         }`}>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="py-8 container-custom"
-          >
+          <div className="py-8 container-custom">
             {children}
-          </motion.div>
+          </div>
         </main>
       </div>
     </div>
@@ -123,8 +110,7 @@ const AppContent = () => {
             <LoadingSpinner size="lg" />
           </div>
         }>
-          <AnimatePresence mode="wait">
-            <Routes>
+          <Routes>
               {/* Routes publiques */}
               <Route path="/login" element={
                 <PublicRoute>
@@ -169,7 +155,6 @@ const AppContent = () => {
               {/* Route par défaut */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
-          </AnimatePresence>
         </Suspense>
       </AppLayout>
     </Router>

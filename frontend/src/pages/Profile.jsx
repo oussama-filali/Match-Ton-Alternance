@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { 
@@ -113,36 +112,13 @@ const Profile = () => {
     }
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const tabVariants = {
-    hidden: { opacity: 0, x: 20 },
-    visible: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -20 }
-  };
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+    <div
       className="max-w-6xl mx-auto space-y-8"
     >
       {/* Header avec score de profil */}
-      <motion.div variants={itemVariants} className="card bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
+      <div  className="card bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold mb-2">Mon Profil</h1>
@@ -161,12 +137,12 @@ const Profile = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <div className="grid lg:grid-cols-4 gap-8">
         
         {/* Navigation des onglets */}
-        <motion.div variants={itemVariants} className="lg:col-span-1">
+        <div  className="lg:col-span-1">
           <div className="card p-0 overflow-hidden">
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-4">
@@ -214,21 +190,17 @@ const Profile = () => {
               ))}
             </nav>
           </div>
-        </motion.div>
+        </div>
 
         {/* Contenu des onglets */}
-        <motion.div variants={itemVariants} className="lg:col-span-3">
+        <div  className="lg:col-span-3">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <AnimatePresence mode="wait">
+            
               
               {/* Informations personnelles */}
               {activeTab === 'personal' && (
-                <motion.div
+                <div
                   key="personal"
-                  variants={tabVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
                   className="card space-y-6"
                 >
                   <h2 className="text-xl font-bold text-gray-900 mb-6">
@@ -356,17 +328,17 @@ const Profile = () => {
                       placeholder="Parlez-nous de vous, vos motivations, vos objectifs..."
                     />
                   </div>
-                </motion.div>
+                </div>
               )}
 
               {/* Formation */}
               {activeTab === 'education' && (
-                <motion.div
+                <div
                   key="education"
-                  variants={tabVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  
+                  
+                  
+                  
                   className="card space-y-6"
                 >
                   <h2 className="text-xl font-bold text-gray-900 mb-6">
@@ -442,17 +414,17 @@ const Profile = () => {
                       />
                     </div>
                   </div>
-                </motion.div>
+                </div>
               )}
 
               {/* Expérience */}
               {activeTab === 'experience' && (
-                <motion.div
+                <div
                   key="experience"
-                  variants={tabVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  
+                  
+                  
+                  
                   className="card space-y-6"
                 >
                   <h2 className="text-xl font-bold text-gray-900 mb-6">
@@ -473,9 +445,9 @@ const Profile = () => {
                   </div>
 
                   {watch('hasExperience') && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
+                    <div
+                      
+                      
                       className="space-y-4"
                     >
                       {/* Ici on pourrait ajouter des champs dynamiques pour les expériences */}
@@ -491,19 +463,19 @@ const Profile = () => {
                           Ajouter une expérience
                         </button>
                       </div>
-                    </motion.div>
+                    </div>
                   )}
-                </motion.div>
+                </div>
               )}
 
               {/* Compétences */}
               {activeTab === 'skills' && (
-                <motion.div
+                <div
                   key="skills"
-                  variants={tabVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  
+                  
+                  
+                  
                   className="card space-y-6"
                 >
                   <h2 className="text-xl font-bold text-gray-900 mb-6">
@@ -545,17 +517,17 @@ const Profile = () => {
                       placeholder="Ex: Anglais (courant), Espagnol (intermédiaire)... (séparées par des virgules)"
                     />
                   </div>
-                </motion.div>
+                </div>
               )}
 
               {/* Préférences */}
               {activeTab === 'preferences' && (
-                <motion.div
+                <div
                   key="preferences"
-                  variants={tabVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  
+                  
+                  
+                  
                   className="card space-y-6"
                 >
                   <h2 className="text-xl font-bold text-gray-900 mb-6">
@@ -620,9 +592,8 @@ const Profile = () => {
                       <option value="1600+">1600€+</option>
                     </select>
                   </div>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
 
             {/* Boutons d'action */}
             <div className="flex justify-end space-x-4 mt-8">
@@ -647,9 +618,9 @@ const Profile = () => {
               </button>
             </div>
           </form>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

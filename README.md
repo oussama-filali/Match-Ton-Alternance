@@ -1,7 +1,6 @@
 
 # 🚀 Match Ton Alternance
 
-![Match Ton Alternance Banner](https://user-images.githubusercontent.com/your-banner.png)
 
 > **Plateforme intelligente pour matcher étudiants et entreprises en alternance.**
 
@@ -106,13 +105,10 @@ Thumbs.db
 
 ---
 
-![Animated Match](https://user-images.githubusercontent.com/your-animated-match.gif)
 
 ---
 
 **Ce projet est en évolution constante. Rejoins-nous pour construire l’alternance de demain !**
-- **pandas & numpy** pour l'analyse de données
-- **TF-IDF** pour l'analyse sémantique
 
 #### Base de Données
 - **Supabase (PostgreSQL)** pour les données principales
