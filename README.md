@@ -382,8 +382,8 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 ## 📞 Support
 
 - **Documentation** : [Wiki du projet](https://github.com/votre-repo/match-ton-alternance/wiki)
-- **Issues** : [GitHub Issues](https://github.com/votre-repo/match-ton-alternance/issues)
-- **Email** : support@matchtonalternance.com
+- **Issues** : [GitHub Issues](https://github.com/oussama-filali/Match-Ton-Alternance.git)
+- **Email** : oussama.halimafilali.pro@gmail.com
 
 ---
 
