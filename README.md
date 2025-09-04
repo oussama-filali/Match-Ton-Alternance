@@ -352,3 +352,58 @@ docker-compose up -d
 ---
 
 **Match Ton Alternance** - Révolutionnons la recherche d'alternance avec l'IA ! 🚀
+
+---
+
+## 📊 Inventaire Fonctionnel & Transparence
+
+### 🟢 Fonctionnel
+- **/frontend** : UI React/Vite opérationnelle
+  - Routage, pages, composants, lazy loading, animations Framer Motion, notifications Toast, contextes, services API.
+- **/backend** : API REST Slim PHP
+  - Endpoints d’authentification, matching, tests de connexion à Supabase.
+  - Serveur proxy France Travail (Express) fonctionnel.
+  - Test de connexion à la base Supabase OK (`test-database.php`).
+- **/ai-engine** : API Flask Python
+  - Algorithme de matching IA avancé, endpoints Flask, dépendances installées.
+  - Fichier `app.py` complet, requirements.txt présents.
+
+### 🟡 Présence effective (partiel ou à l’état de test)
+- **Tests** :
+  - Scripts de test backend et ai-engine présents, mais pas de couverture exhaustive ni d’intégration continue.
+  - Pas de tests automatisés pour le frontend.
+- **Monitoring & Analytics** :
+  - Dépendances pour logging (gunicorn, logging Python) présentes, mais pas de dashboard ou d’outil de monitoring déployé.
+- **Docker** :
+  - Fichiers Docker présents uniquement dans des dépendances, pas de Dockerfile racine ni de configuration pour l’ensemble du projet.
+
+### 🔴 À faire / en cours
+- **Matching avancé IA** : Algorithme en place côté Python, mais intégration et tests à finaliser.
+- **Déploiement production** : Pas de scripts ou de configuration CI/CD/Docker pour le déploiement complet.
+- **Tests automatisés frontend** : À créer.
+- **Monitoring centralisé** : À mettre en place (Grafana, Sentry, etc.).
+- **Documentation API** : À compléter (Swagger, Postman).
+
+---
+
+## 🧭 Veille technologique & Conseils pour débutant
+
+- **Objectif** : Rester à jour et choisir les technologies adaptées à ton niveau et au projet.
+- **Frontend** :
+  - React + Vite + Tailwind = combo moderne, facile à prendre en main, grosse communauté.
+  - Framer Motion pour l’animation, React Hook Form pour les formulaires.
+- **Backend** :
+  - Slim PHP pour la simplicité, Express pour les proxys/API externes.
+  - Supabase/PostgreSQL : base cloud, facile à connecter, docs claires.
+- **IA** :
+  - Flask + scikit-learn + NLTK = stack accessible pour débuter en IA/matching.
+- **Tests** :
+  - Pytest (Python), PHPUnit (PHP), Vitest/Jest (JS) à envisager pour automatiser.
+- **Monitoring** :
+  - Gunicorn/logging pour Python, Monolog pour PHP, Sentry pour centraliser les erreurs.
+- **Déploiement** :
+  - Docker, Vercel, Netlify, Railway : solutions cloud simples pour débuter.
+- **Documentation** :
+  - Markdown, Swagger, Postman pour documenter et tester les API.
+
+> Astuce : Avance étape par étape, documente chaque fonctionnalité, et n’hésite pas à explorer les outils qui te semblent accessibles. La cohérence et la simplicité sont tes alliées !
