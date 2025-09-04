@@ -74,17 +74,12 @@ frontend/node_modules/
 
 ## 📬 Contact & Suivi
 
-- [Issues GitHub](https://github.com/oussama-filali/Match-Ton-Alternance/issues)
-- [Contact](mailto:contact@match-ton-alternance.fr)
+- [Contact](mailto:oussama.halimafilali.pro@gmail.com)
 ---
 
 **Ce projet est en évolution constante. Rejoins-nous pour construire l’alternance de demain !**
 - **pandas & numpy** pour l'analyse de données
 - **TF-IDF** pour l'analyse sémantique
-
-#### Base de Données
-- **Redis** pour le cache (optionnel)
-- **Structure optimisée** pour les requêtes de matching
 
 ## 🚀 Installation et Configuration
 
@@ -94,10 +89,7 @@ frontend/node_modules/
 - **Python** 3.9+ avec pip
 - **Compte Supabase** pour la base de données
 
-### 1. Clone du Projet
-```bash
-git clone https://github.com/votre-repo/match-ton-alternance.git
-cd match-ton-alternance
+
 ```
 
 ### 2. Configuration de la Base de Données
@@ -345,8 +337,6 @@ docker-compose up -d
 
 ## 📞 Support
 
-- **Documentation** : [Wiki du projet](https://github.com/votre-repo/match-ton-alternance/wiki)
-- **Issues** : [GitHub Issues](https://github.com/oussama-filali/Match-Ton-Alternance.git)
 - **Email** : oussama.halimafilali.pro@gmail.com
 
 ---
@@ -406,4 +396,3 @@ docker-compose up -d
 - **Documentation** :
   - Markdown, Swagger, Postman pour documenter et tester les API.
 
-> Astuce : Avance étape par étape, documente chaque fonctionnalité, et n’hésite pas à explorer les outils qui te semblent accessibles. La cohérence et la simplicité sont tes alliées !
