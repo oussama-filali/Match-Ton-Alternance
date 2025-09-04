@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   SparklesIcon,
@@ -133,29 +132,29 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
       
       {/* Hero Section */}
-      <motion.section
+      <section
         ref={heroRef}
-        variants={containerVariants}
-        initial="hidden"
+        
+        
         animate={heroInView ? "visible" : "hidden"}
         className="relative py-20 overflow-hidden lg:py-32"
       >
         {/* Background decorations */}
         <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            variants={floatingVariants}
-            animate="animate"
+          <div
+            
+            
             className="absolute w-20 h-20 rounded-full top-20 left-10 bg-primary-200 opacity-20"
           />
-          <motion.div
-            variants={floatingVariants}
-            animate="animate"
+          <div
+            
+            
             style={{ animationDelay: '1s' }}
             className="absolute w-32 h-32 rounded-full top-40 right-20 bg-secondary-200 opacity-20"
           />
-          <motion.div
-            variants={floatingVariants}
-            animate="animate"
+          <div
+            
+            
             style={{ animationDelay: '2s' }}
             className="absolute w-16 h-16 rounded-full bottom-20 left-1/4 bg-accent-200 opacity-20"
           />
@@ -164,36 +163,36 @@ const Home = () => {
         <div className="relative container-custom">
           <div className="max-w-4xl mx-auto text-center">
             
-            <motion.div
-              variants={itemVariants}
+            <div
+              
               className="mb-6"
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-primary-100 text-primary-700">
                 <SparklesIcon className="w-4 h-4" />
                 Plateforme IA de matching d'alternance
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              variants={itemVariants}
+            <h1
+              
               className="mb-6 text-5xl font-bold leading-tight text-gray-900 lg:text-7xl"
             >
               Trouve ton
               <span className="block gradient-text">
                 alternance parfaite
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              variants={itemVariants}
+            <p
+              
               className="max-w-2xl mx-auto mb-8 text-xl leading-relaxed text-gray-600"
             >
               Notre IA révolutionnaire analyse ton profil et te connecte avec les meilleures opportunités d'alternance. 
               Plus de recherche fastidieuse, que des matches parfaits !
-            </motion.p>
+            </p>
 
-            <motion.div
-              variants={itemVariants}
+            <div
+              
               className="flex flex-col items-center justify-center gap-4 sm:flex-row"
             >
               <Link
@@ -210,11 +209,11 @@ const Home = () => {
                 </div>
                 Voir la démo
               </button>
-            </motion.div>
+            </div>
 
             {/* Stats */}
-            <motion.div
-              variants={itemVariants}
+            <div
+              
               className="grid grid-cols-2 gap-8 mt-16 lg:grid-cols-4"
             >
               {[
@@ -224,46 +223,46 @@ const Home = () => {
                 { label: "Taux de réussite", value: stats.successRate, suffix: "%" }
               ].map((stat, index) => (
                 <div key={index} className="text-center">
-                  <motion.div
-                    initial={{ scale: 0 }}
+                  <div
+                    
                     animate={heroInView ? { scale: 1 } : { scale: 0 }}
-                    transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
+                    
                     className="mb-2 text-3xl font-bold lg:text-4xl text-primary-600"
                   >
                     {stat.value}{stat.suffix}
-                  </motion.div>
+                  </div>
                   <div className="font-medium text-gray-600">{stat.label}</div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* Features Section */}
-      <motion.section
+      <section
         ref={featuresRef}
-        variants={containerVariants}
-        initial="hidden"
+        
+        
         animate={featuresInView ? "visible" : "hidden"}
         className="py-20 bg-white"
       >
         <div className="container-custom">
-          <motion.div variants={itemVariants} className="mb-16 text-center">
+          <div  className="mb-16 text-center">
             <h2 className="mb-6 text-4xl font-bold text-gray-900 lg:text-5xl">
               Pourquoi choisir notre plateforme ?
             </h2>
             <p className="max-w-3xl mx-auto text-xl text-gray-600">
               Une technologie de pointe au service de votre réussite professionnelle
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
-              <motion.div
+              <div
                 key={index}
-                variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.02 }}
+                
+                
                 className="text-center card group"
               >
                 <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${feature.color} p-4 shadow-lg group-hover:shadow-xl transition-shadow`}>
@@ -275,17 +274,17 @@ const Home = () => {
                 <p className="leading-relaxed text-gray-600">
                   {feature.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </motion.section>
+      </section>
 
       {/* How it works */}
       <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
+          <div
+            
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mb-16 text-center"
@@ -296,16 +295,16 @@ const Home = () => {
             <p className="max-w-3xl mx-auto text-xl text-gray-600">
               Un processus simple et efficace pour trouver votre alternance idéale
             </p>
-          </motion.div>
+          </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
+                
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
+                
                 className="relative"
               >
                 {/* Connector line */}
@@ -330,7 +329,7 @@ const Home = () => {
                     {step.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -339,8 +338,8 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-20 text-white bg-gradient-to-br from-primary-600 to-secondary-600">
         <div className="text-center container-custom">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+          <div
+            
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             className="max-w-3xl mx-auto"
@@ -366,7 +365,7 @@ const Home = () => {
                 J'ai déjà un compte
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

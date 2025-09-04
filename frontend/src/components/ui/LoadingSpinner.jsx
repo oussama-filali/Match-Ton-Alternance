@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
 
 const LoadingSpinner = ({ 
@@ -49,9 +48,9 @@ const LoadingSpinner = ({
 
   return (
     <div className={containerClasses}>
-      <motion.div
-        variants={spinnerVariants}
-        animate="animate"
+      <div
+        
+        
         className={clsx(
           sizeClasses[size],
           colorClasses[color],
@@ -77,20 +76,20 @@ const LoadingSpinner = ({
             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
           />
         </svg>
-      </motion.div>
+      </div>
       
       {text && (
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+        <p
+          
+          
+          
           className={clsx(
             textSizeClasses[size],
             'text-gray-600 font-medium'
           )}
         >
           {text}
-        </motion.p>
+        </p>
       )}
     </div>
   );
@@ -126,10 +125,10 @@ export const LoadingDots = ({ size = 'md', color = 'primary' }) => {
   return (
     <div className="flex items-center gap-1">
       {[0, 1, 2].map((index) => (
-        <motion.div
+        <div
           key={index}
-          variants={dotVariants}
-          animate="animate"
+          
+          
           style={{ animationDelay: `${index * 0.2}s` }}
           className={clsx(
             dotSizeClasses[size],

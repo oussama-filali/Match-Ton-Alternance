@@ -51,19 +51,13 @@ export default defineConfig({
           // Séparer les vendors pour un meilleur caching
           vendor: ['react', 'react-dom'],
           router: ['react-router-dom'],
-          ui: ['framer-motion', '@headlessui/react', '@heroicons/react'],
+          ui: ['@headlessui/react', '@heroicons/react'],
           utils: ['axios', 'clsx']
         }
       }
     },
     // Optimisations
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: false,
   },
   
   // Variables d'environnement
@@ -77,7 +71,6 @@ export default defineConfig({
       'react',
       'react-dom',
       'react-router-dom',
-      'framer-motion',
       'axios',
       'react-hook-form',
       'react-hot-toast'

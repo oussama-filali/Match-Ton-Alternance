@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Bars3Icon, 
   XMarkIcon,
@@ -48,9 +47,9 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      
+      
+      
       className="bg-white/95 backdrop-blur-md border-b border-gray-200 sticky top-0 z-40 shadow-sm"
     >
       <div className="container-custom">
@@ -70,13 +69,13 @@ const Navbar = () => {
             </button>
             
             <Link to="/dashboard" className="flex items-center gap-3">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <div
+                
+                
                 className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg"
               >
                 M
-              </motion.div>
+              </div>
               <div className="hidden sm:block">
                 <h1 className="text-xl font-bold gradient-text">
                   Match Ton Alternance
@@ -122,28 +121,28 @@ const Navbar = () => {
             </div>
 
             {/* Notifications */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <button
+              
+              
               className="relative p-2 rounded-lg hover:bg-gray-100 transition-colors"
             >
               <BellIcon className="w-6 h-6 text-gray-600" />
               {unreadNotifications > 0 && (
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
+                <span
+                  
+                  
                   className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium"
                 >
                   {unreadNotifications}
-                </motion.span>
+                </span>
               )}
-            </motion.button>
+            </button>
 
             {/* Menu profil */}
             <div className="relative">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <button
+                
+                
                 onClick={() => setProfileMenuOpen(!profileMenuOpen)}
                 className="flex items-center gap-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
@@ -161,16 +160,16 @@ const Navbar = () => {
                 <ChevronDownIcon className={`w-4 h-4 text-gray-400 transition-transform ${
                   profileMenuOpen ? 'rotate-180' : ''
                 }`} />
-              </motion.button>
+              </button>
 
               {/* Menu déroulant profil */}
-              <AnimatePresence>
+              
                 {profileMenuOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                  <div
+                    
+                    
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
+                    
                     className="absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 py-2 z-50"
                   >
                     <div className="px-4 py-3 border-b border-gray-100">
@@ -209,9 +208,9 @@ const Navbar = () => {
                       <ArrowRightOnRectangleIcon className="w-5 h-5" />
                       Déconnexion
                     </button>
-                  </motion.div>
+                  </div>
                 )}
-              </AnimatePresence>
+              
             </div>
           </div>
         </div>

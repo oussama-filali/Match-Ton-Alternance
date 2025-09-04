@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
   HomeIcon,
   UserIcon,
@@ -108,16 +107,16 @@ const Sidebar = () => {
 
   return (
     <motion.aside
-      variants={sidebarVariants}
-      initial="hidden"
-      animate="visible"
+      
+      
+      
       className="fixed left-0 top-16 h-[calc(100vh-4rem)] w-64 bg-white border-r border-gray-200 shadow-lg z-30 overflow-y-auto custom-scrollbar"
     >
       <div className="p-6">
         
         {/* Score du profil */}
-        <motion.div
-          variants={itemVariants}
+        <div
+          
           className="mb-8 p-4 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl border border-primary-100"
         >
           <div className="flex items-center gap-3 mb-3">
@@ -129,10 +128,10 @@ const Sidebar = () => {
           </div>
           
           <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-            <motion.div
-              initial={{ width: 0 }}
+            <div
+              
               animate={{ width: `${stats.profileScore}%` }}
-              transition={{ duration: 1, delay: 0.5 }}
+              
               className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
             />
           </div>
@@ -145,22 +144,22 @@ const Sidebar = () => {
               Compléter mon profil →
             </Link>
           )}
-        </motion.div>
+        </div>
 
         {/* Navigation principale */}
         <nav className="space-y-2">
-          <motion.div variants={itemVariants}>
+          <div >
             <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
               Navigation
             </h2>
-          </motion.div>
+          </div>
           
           {navigationItems.map((item) => {
             const active = isActive(item.href);
             const Icon = active ? item.iconSolid : item.icon;
             
             return (
-              <motion.div key={item.name} variants={itemVariants}>
+              <div key={item.name} >
                 <Link
                   to={item.href}
                   className={`group flex items-center justify-between px-3 py-2.5 rounded-lg transition-all duration-200 ${
@@ -180,36 +179,36 @@ const Sidebar = () => {
                   </div>
                   
                   {item.badge && (
-                    <motion.span
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
+                    <span
+                      
+                      
                       className={`px-2 py-1 text-xs font-medium rounded-full ${
                         item.badgeColor || 'bg-gray-100 text-gray-600'
                       }`}
                     >
                       {item.badge}
-                    </motion.span>
+                    </span>
                   )}
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
         </nav>
 
         {/* Navigation secondaire */}
         <div className="mt-8 pt-6 border-t border-gray-200">
-          <motion.div variants={itemVariants}>
+          <div >
             <h2 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">
               Autres
             </h2>
-          </motion.div>
+          </div>
           
           <nav className="space-y-1">
             {secondaryItems.map((item) => {
               const active = isActive(item.href);
               
               return (
-                <motion.div key={item.name} variants={itemVariants}>
+                <div key={item.name} >
                   <Link
                     to={item.href}
                     className={`group flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 ${
@@ -226,15 +225,15 @@ const Sidebar = () => {
                       <div className="text-xs text-gray-500">{item.description}</div>
                     </div>
                   </Link>
-                </motion.div>
+                </div>
               );
             })}
           </nav>
         </div>
 
         {/* Call to action */}
-        <motion.div
-          variants={itemVariants}
+        <div
+          
           className="mt-8 p-4 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-xl text-white"
         >
           <h3 className="font-semibold mb-2">🚀 Boostez vos chances !</h3>
@@ -247,7 +246,7 @@ const Sidebar = () => {
           >
             Améliorer mon profil
           </Link>
-        </motion.div>
+        </div>
       </div>
     </motion.aside>
   );

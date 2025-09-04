@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { 
@@ -74,14 +73,14 @@ const Login = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen px-4 py-12 bg-gradient-to-br from-primary-50 via-white to-secondary-50 sm:px-6 lg:px-8">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+      <div
+        
+        
+        
         className="w-full max-w-md space-y-8"
       >
         {/* Header */}
-        <motion.div variants={itemVariants} className="text-center">
+        <div  className="text-center">
           <Link to="/" className="inline-flex items-center gap-3 mb-6">
             <div className="flex items-center justify-center w-12 h-12 text-xl font-bold text-white shadow-lg bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl">
               M
@@ -97,10 +96,10 @@ const Login = () => {
           <p className="text-gray-600">
             Connectez-vous pour accéder à votre tableau de bord
           </p>
-        </motion.div>
+        </div>
 
         {/* Formulaire */}
-        <motion.div variants={itemVariants} className="card">
+        <div  className="card">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             
             {/* Email */}
@@ -126,13 +125,13 @@ const Login = () => {
                 />
               </div>
               {errors.email && (
-                <motion.p
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                <p
+                  
+                  
                   className="mt-1 text-sm text-red-600"
                 >
                   {errors.email.message}
-                </motion.p>
+                </p>
               )}
             </div>
 
@@ -170,13 +169,13 @@ const Login = () => {
                 </button>
               </div>
               {errors.password && (
-                <motion.p
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                <p
+                  
+                  
                   className="mt-1 text-sm text-red-600"
                 >
                   {errors.password.message}
-                </motion.p>
+                </p>
               )}
             </div>
 
@@ -203,9 +202,9 @@ const Login = () => {
             </div>
 
             {/* Bouton de connexion */}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
+            <button
+              
+              
               type="submit"
               disabled={isSubmitting}
               className="flex items-center justify-center w-full gap-2 py-3 btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
@@ -218,7 +217,7 @@ const Login = () => {
                   <ArrowRightIcon className="w-5 h-5" />
                 </>
               )}
-            </motion.button>
+            </button>
           </form>
 
           {/* Divider */}
@@ -252,10 +251,10 @@ const Login = () => {
               Continuer avec Facebook
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* Lien d'inscription */}
-        <motion.div variants={itemVariants} className="text-center">
+        <div  className="text-center">
           <p className="text-gray-600">
             Pas encore de compte ?{' '}
             <Link
@@ -265,10 +264,10 @@ const Login = () => {
               Créer un compte
             </Link>
           </p>
-        </motion.div>
+        </div>
 
         {/* Features preview */}
-        <motion.div variants={itemVariants} className="mt-8">
+        <div  className="mt-8">
           <div className="mb-4 text-center">
             <SparklesIcon className="w-6 h-6 mx-auto mb-2 text-primary-500" />
             <p className="text-sm text-gray-500">
@@ -290,8 +289,8 @@ const Login = () => {
               <div className="text-xs text-gray-500">Réussite</div>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 };

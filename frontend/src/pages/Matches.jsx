@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import { 
   HeartIcon,
   XMarkIcon,
@@ -121,9 +120,9 @@ const Matches = () => {
     <div className="max-w-4xl mx-auto space-y-6">
       
       {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+      <div
+        
+        
         className="text-center"
       >
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -132,7 +131,7 @@ const Matches = () => {
         <p className="text-gray-600">
           Swipez à droite pour les offres qui vous intéressent, à gauche pour passer
         </p>
-      </motion.div>
+      </div>
 
       {/* Interface de swipe */}
       <div className="relative h-[600px] flex items-center justify-center">
@@ -141,12 +140,12 @@ const Matches = () => {
           <div className="relative w-full max-w-md">
             
             {/* Stack de cartes */}
-            <AnimatePresence>
+            
               {matches.slice(currentIndex, currentIndex + 3).map((match, index) => (
-                <motion.div
+                <div
                   key={match.id}
                   className="absolute inset-0"
-                  initial={{ scale: 0.95, y: index * 4, opacity: 0.8 }}
+                  
                   animate={{ 
                     scale: index === 0 ? 1 : 0.95,
                     y: index * 4,
@@ -259,14 +258,14 @@ const Matches = () => {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </AnimatePresence>
+            
 
             {/* Indicateurs de swipe */}
             <div className="absolute top-20 left-8 z-10">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+              <div
+                
                 animate={{ 
                   opacity: x.get() < -50 ? 1 : 0,
                   scale: x.get() < -50 ? 1 : 0.8
@@ -274,12 +273,12 @@ const Matches = () => {
                 className="bg-red-500 text-white px-4 py-2 rounded-full font-bold shadow-lg"
               >
                 PASSER
-              </motion.div>
+              </div>
             </div>
 
             <div className="absolute top-20 right-8 z-10">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+              <div
+                
                 animate={{ 
                   opacity: x.get() > 50 ? 1 : 0,
                   scale: x.get() > 50 ? 1 : 0.8
@@ -287,14 +286,14 @@ const Matches = () => {
                 className="bg-green-500 text-white px-4 py-2 rounded-full font-bold shadow-lg"
               >
                 J'AIME
-              </motion.div>
+              </div>
             </div>
           </div>
         ) : (
           /* Fin des matches */
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+          <div
+            
+            
             className="text-center space-y-6"
           >
             <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto">
@@ -325,15 +324,15 @@ const Matches = () => {
                 Voir mes favoris
               </button>
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
 
       {/* Boutons d'action */}
       {hasMoreMatches && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
+          
+          
           className="flex justify-center items-center gap-8"
         >
           <button
@@ -363,31 +362,31 @@ const Matches = () => {
           >
             <HeartIcon className="w-8 h-8" />
           </button>
-        </motion.div>
+        </div>
       )}
 
       {/* Animation de match */}
-      <AnimatePresence>
+      
         {showMatched && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+          <div
+            
+            
             exit={{ opacity: 0, scale: 0.8 }}
             className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
           >
-            <motion.div
-              initial={{ y: 50 }}
-              animate={{ y: 0 }}
+            <div
+              
+              
               exit={{ y: 50 }}
               className="bg-white rounded-2xl p-8 text-center max-w-md mx-4"
             >
-              <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 0.5, repeat: 2 }}
+              <div
+                
+                
                 className="w-20 h-20 bg-gradient-to-br from-pink-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4"
               >
                 <HeartIconSolid className="w-10 h-10 text-white" />
-              </motion.div>
+              </div>
               
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 C'est un match ! 🎉
@@ -400,15 +399,15 @@ const Matches = () => {
                 <ChatBubbleLeftRightIcon className="w-5 h-5" />
                 Envoyer un message
               </button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         )}
-      </AnimatePresence>
+      
 
       {/* Instructions */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+      <div
+        
+        
         className="card bg-gray-50 text-center"
       >
         <h3 className="font-semibold text-gray-900 mb-2">Comment ça marche ?</h3>
@@ -426,7 +425,7 @@ const Matches = () => {
             Swipez à droite pour aimer
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

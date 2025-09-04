@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { 
   SparklesIcon,
   BriefcaseIcon,
@@ -76,14 +75,14 @@ const Dashboard = () => {
   }
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+    <div
+      
+      
+      
       className="space-y-8"
     >
       {/* Header de bienvenue */}
-      <motion.div variants={itemVariants} className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-white">
+      <div  className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-white">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold mb-2">
@@ -99,10 +98,10 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Statistiques principales */}
-      <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="card bg-gradient-to-br from-blue-50 to-blue-100 border-blue-200">
           <div className="flex items-center justify-between">
             <div>
@@ -167,12 +166,12 @@ const Dashboard = () => {
             Excellent score !
           </p>
         </div>
-      </motion.div>
+      </div>
 
       <div className="grid lg:grid-cols-3 gap-8">
         
         {/* Matches récents */}
-        <motion.div variants={itemVariants} className="lg:col-span-2">
+        <div  className="lg:col-span-2">
           <div className="card">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-bold text-gray-900">Matches récents</h2>
@@ -185,11 +184,11 @@ const Dashboard = () => {
             <div className="space-y-4">
               {recentMatches.length > 0 ? (
                 recentMatches.slice(0, 3).map((match, index) => (
-                  <motion.div
+                  <div
                     key={match.id}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    
+                    
+                    
                     className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                   >
                     <div className="flex items-center space-x-4">
@@ -214,7 +213,7 @@ const Dashboard = () => {
                         Postuler
                       </button>
                     </div>
-                  </motion.div>
+                  </div>
                 ))
               ) : (
                 <div className="text-center py-8">
@@ -228,10 +227,10 @@ const Dashboard = () => {
               )}
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Sidebar avec recommandations et activités */}
-        <motion.div variants={itemVariants} className="space-y-6">
+        <div  className="space-y-6">
           
           {/* Recommandations */}
           <div className="card">
@@ -303,12 +302,12 @@ const Dashboard = () => {
               </Link>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Call to action si profil incomplet */}
       {stats.profileScore < 80 && (
-        <motion.div variants={itemVariants} className="card bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200">
+        <div  className="card bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -328,9 +327,9 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 

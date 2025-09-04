@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
 import { toast } from 'react-hot-toast';
 import {
   User as UserIcon,
@@ -11,7 +10,7 @@ import {
   CheckCircle as CheckCircleIcon,
   ArrowLeft as ArrowLeftIcon,
   ArrowRight as ArrowRightIcon,
-  Sparkles as SparklesIcon
+  Star as SparklesIcon
 } from 'lucide-react';
 import { useApp } from '../../contexts/AppContext';
 import apiService from '../../services/apiService';
@@ -199,14 +198,14 @@ const Register = () => {
 
   return (
     <div className="min-h-screen px-4 py-12 bg-gradient-to-br from-primary-50 via-white to-secondary-50 sm:px-6 lg:px-8">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+      <div
+        
+        
+        
         className="max-w-2xl mx-auto"
       >
         {/* Header */}
-        <motion.div variants={itemVariants} className="mb-8 text-center">
+        <div  className="mb-8 text-center">
           <Link to="/" className="inline-flex items-center gap-3 mb-6">
             <div className="flex items-center justify-center w-12 h-12 text-xl font-bold text-white shadow-lg bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl">
               M
@@ -222,10 +221,10 @@ const Register = () => {
           <p className="text-gray-600">
             Rejoignez notre plateforme intelligente de matching
           </p>
-        </motion.div>
+        </div>
 
         {/* Steps */}
-        <motion.div variants={itemVariants} className="mb-8">
+        <div  className="mb-8">
           <div className="flex items-center justify-between">
             {steps.map((step, index) => (
               <div key={step.id} className="flex items-center">
@@ -262,55 +261,55 @@ const Register = () => {
               {steps[currentStep - 1].description}
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Form */}
         <div className="card">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <AnimatePresence mode="wait">
+            
               {/* ÉTAPE 1 */}
               {currentStep === 1 && (
-                <motion.div
+                <div
                   key="step1"
-                  variants={stepVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  
+                  
+                  
+                  
                   className="space-y-6"
                 >
                   {/* 👉 Tous tes champs prénom, nom, email, téléphone, mdp, confirm mdp */}
                   {/* ... je garde ton code tel quel pour les inputs */}
-                </motion.div>
+                </div>
               )}
 
               {/* ÉTAPE 2 */}
               {currentStep === 2 && (
-                <motion.div
+                <div
                   key="step2"
-                  variants={stepVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  
+                  
+                  
+                  
                   className="space-y-8"
                 >
                   {/* 👉 Questionnaire comportemental (je garde ton code des questions) */}
-                </motion.div>
+                </div>
               )}
 
               {/* ÉTAPE 3 */}
               {currentStep === 3 && (
-                <motion.div
+                <div
                   key="step3"
-                  variants={stepVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
+                  
+                  
+                  
+                  
                   className="space-y-6 text-center"
                 >
                   {/* 👉 Conditions + finalisation */}
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
+            
 
             {/* Navigation */}
             <div className="flex items-center justify-between pt-6 mt-8 border-t border-gray-200">
@@ -357,7 +356,7 @@ const Register = () => {
         </div>
 
         {/* Login Link */}
-        <motion.div variants={itemVariants} className="mt-6 text-center">
+        <div  className="mt-6 text-center">
           <p className="text-gray-600">
             Déjà un compte ?{' '}
             <Link
@@ -367,8 +366,8 @@ const Register = () => {
               Se connecter
             </Link>
           </p>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'react-router-dom';
 import { 
   MagnifyingGlassIcon,
@@ -200,14 +199,14 @@ const Jobs = () => {
   };
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
+    <div
+      
+      
+      
       className="space-y-6"
     >
       {/* Header avec recherche */}
-      <motion.div variants={itemVariants} className="card">
+      <div  className="card">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div>
             <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -259,14 +258,14 @@ const Jobs = () => {
             </button>
           </div>
         </form>
-      </motion.div>
+      </div>
 
       {/* Filtres avancés */}
-      <AnimatePresence>
+      
         {showFilters && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+          <div
+            
+            
             exit={{ opacity: 0, height: 0 }}
             className="card"
           >
@@ -386,9 +385,9 @@ const Jobs = () => {
                 <span className="text-sm text-gray-500">€/mois</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
+      
 
       {/* Liste des offres */}
       <div className="space-y-4">
@@ -400,12 +399,12 @@ const Jobs = () => {
             const isFavorite = favorites.has(job.id);
             
             return (
-              <motion.div
+              <div
                 key={job.id}
-                variants={itemVariants}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
+                
+                
+                
+                
                 className="card hover:shadow-lg transition-all duration-200 border-l-4 border-l-transparent hover:border-l-primary-500"
               >
                 <div className="flex items-start justify-between">
@@ -521,11 +520,11 @@ const Jobs = () => {
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })
         ) : (
-          <motion.div variants={itemVariants} className="card text-center py-12">
+          <div  className="card text-center py-12">
             <BriefcaseIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-lg font-semibold text-gray-900 mb-2">
               Aucune offre trouvée
@@ -539,13 +538,13 @@ const Jobs = () => {
             >
               Effacer les filtres
             </button>
-          </motion.div>
+          </div>
         )}
       </div>
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <motion.div variants={itemVariants} className="flex justify-center items-center gap-2 mt-8">
+        <div  className="flex justify-center items-center gap-2 mt-8">
           <button
             onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
             disabled={currentPage === 1}
@@ -580,9 +579,9 @@ const Jobs = () => {
           >
             Suivant
           </button>
-        </motion.div>
+        </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 
