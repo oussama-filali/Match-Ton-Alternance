@@ -1,61 +1,43 @@
-
 # 🚀 Match Ton Alternance
 
-![Match Ton Alternance Banner](https://user-images.githubusercontent.com/your-banner.png)
+## 🖥️ Aperçu
+
+<!-- Animation Snake SVG interactive -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" alt="animation snake" width="600" />
+</p>
 
 > **Plateforme intelligente pour matcher étudiants et entreprises en alternance.**
-
 ---
 
 ## ✨ Concept
 
+
 Match Ton Alternance est une application web qui connecte les étudiants à la recherche d'une alternance avec les entreprises qui recrutent, grâce à un moteur de matching avancé et une expérience utilisateur moderne.
 
 - **Candidats** : Créez votre profil, découvrez des offres adaptées à votre personnalité et vos compétences.
-- **Entreprises** : Publiez vos offres, trouvez le talent idéal en quelques clics.
 - **Matching IA** : Un algorithme intelligent pour maximiser la pertinence des rencontres.
 
 ---
 
 ## 🛠️ Technologies utilisées
-
 - **Backend** : PHP Slim, PDO, JWT, Supabase/PostgreSQL
 - **Frontend** : React, Vite, Axios, react-hook-form, Tailwind CSS
 - **API externes** : France Travail, Supabase
 
----
-
-## ✅ Tests réalisés
-
 - Inscription et connexion utilisateur (frontend/backend)
-- Connexion à Supabase/PostgreSQL
 - Routing API, gestion CORS
 - Correction des imports React et icônes
 
----
 
-## 🐞 Bugs rencontrés
-
-- Problèmes de connexion à la base (host, .env)
 - Parsing .env (Dotenv)
 - Erreurs d’import React
 - Affichage des erreurs backend (Slim Application Error)
-
----
-
 ## 📈 Roadmap & Réalisations à venir
-
 - 🔒 Sécurisation de l’authentification (JWT, refresh token)
 - 🤖 Finalisation du matching IA
 - 🧪 Ajout de tests unitaires et d’intégration
-- 🚨 Amélioration de la gestion des erreurs et des logs
-- 🚀 Déploiement production (sécurisation des clés, config)
 
----
-
-## 📝 Bonnes pratiques Git
-
-- **Fichiers sensibles ignorés** : `.env`, clés, logs, dépendances, caches
 - **Voir `.gitignore`** :
 
 ```ignore
@@ -73,28 +55,19 @@ backend/vendor/
 frontend/node_modules/
 *.log
 *.cache
-*.sqlite
 *.db
 *.tmp
 *.swp
-.DS_Store
-Thumbs.db
-```
 
----
 
 ## 💡 Pour contribuer
 
 1. Clone le repo
 2. Installe les dépendances (`composer install`, `npm install`)
-3. Configure ton `.env` (voir exemple)
 4. Lance le backend et le frontend
 5. Propose tes idées ou tes corrections !
 
----
-
 ## 🌟 Inspiration
-
 > “Trouver son alternance, c’est trouver sa voie. Ici, chaque profil compte, chaque entreprise a sa chance.”
 
 ---
@@ -103,11 +76,6 @@ Thumbs.db
 
 - [Issues GitHub](https://github.com/oussama-filali/Match-Ton-Alternance/issues)
 - [Contact](mailto:contact@match-ton-alternance.fr)
-
----
-
-![Animated Match](https://user-images.githubusercontent.com/your-animated-match.gif)
-
 ---
 
 **Ce projet est en évolution constante. Rejoins-nous pour construire l’alternance de demain !**
@@ -115,7 +83,6 @@ Thumbs.db
 - **TF-IDF** pour l'analyse sémantique
 
 #### Base de Données
-- **Supabase (PostgreSQL)** pour les données principales
 - **Redis** pour le cache (optionnel)
 - **Structure optimisée** pour les requêtes de matching
 
@@ -368,9 +335,6 @@ docker-compose up -d
 - **Python** : PEP 8
 - **Git** : Conventional Commits
 
-## 📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
 ## 👥 Équipe
 
@@ -387,4 +351,4 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 ---
 
-**Match Ton Alternance** - Révolutionnons la recherche d'alternance avec l'IA ! 🚀 
+**Match Ton Alternance** - Révolutionnons la recherche d'alternance avec l'IA ! 🚀
