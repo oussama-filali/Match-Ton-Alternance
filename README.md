@@ -74,7 +74,6 @@ frontend/node_modules/
 
 ## 📬 Contact & Suivi
 
-- [Issues GitHub](https://github.com/oussama-filali/Match-Ton-Alternance/issues)
 - [Contact](mailto:contact@match-ton-alternance.fr)
 ---
 
@@ -94,11 +93,7 @@ frontend/node_modules/
 - **Python** 3.9+ avec pip
 - **Compte Supabase** pour la base de données
 
-### 1. Clone du Projet
-```bash
-git clone https://github.com/votre-repo/match-ton-alternance.git
-cd match-ton-alternance
-```
+
 
 ### 2. Configuration de la Base de Données
 1. Créez un projet sur [Supabase](https://supabase.com)
